@@ -1,16 +1,16 @@
 # Dropout as a Regularizer of Interaction Effects
 
-We know Dropout works well, but *how* does it work? We propose a simple view of Dropout: Dropout regularizes against high-order interaction effects.
+We know Dropout works well, but *how* does it work? In [our paper](https://arxiv.org/abs/2007.00823), we propose a simple view of Dropout: Dropout regularizes against high-order interaction effects.
 
 This can be seen intuitively by the symmetry between the hypothesis space of interaction effects and Dropout regularization:
-Given $N$ variables, there are ${N \choose k}$ possible sets of $k$ variables ($N$ univariate effects, $\mathcal{O}(N^2)$ pairwise interactions, $\mathcal{O}(N^3)$ 3-way interactions); a $k$-order interaction effect survives Dropout at rate $p$ with probability $(1-p)^k$. These rates effectively cancel:
+Given <img src="https://render.githubusercontent.com/render/math?math=N"> variables, there are <img src="https://render.githubusercontent.com/render/math?math={N \choose k}"> possible sets of <img src="https://render.githubusercontent.com/render/math?math=k"> variables (<img src="https://render.githubusercontent.com/render/math?math=N"> univariate effects, <img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(N^2)"> pairwise interactions, <img src="https://render.githubusercontent.com/render/math?math=\mathcal{O}(N^3)"> 3-way interactions); a <img src="https://render.githubusercontent.com/render/math?math=k">-order interaction effect survives Dropout at rate <img src="https://render.githubusercontent.com/render/math?math=p"> with probability <img src="https://render.githubusercontent.com/render/math?math=(1-p)^k">. These rates effectively cancel:
 
-![Preview](symmetry.pdf)
+![Preview](symmetry.png)
 
 If you use the ideas in this paper, please cite:
 
 ```
-@InProceedings{dropout_intx,
+@InProceedings{LengerichDropout2022,
   title={Dropout as a Regularizer of Interaction Effects},
   author={Lengerich, Benjamin and Xing, Eric P. and Caruana, Rich},
   journal={{Proceedings of the Twenty Fifth International Conference on Artificial Intelligence and Statistics}},
